@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成語解釋</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        h1 { text-align: center; }
+        ul { list-style-type: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>成語解釋</h1>
+        <ul>
+            {% for text, explanation in explanations.items() %}
+                <li>{{ text }}: {{ explanation }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
