@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>掃描結果</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        h1 { text-align: center; }
+        ul { list-style-type: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>掃描結果</h1>
+        <p>找到的最大文字: <strong>{{ max_text }}</strong></p>
+        <form method="POST" action="{{ url_for('select_text') }}">
+            <ul>
+                {% for line in text_lines %}
+                    <li>
+                        <input type="checkbox" name="selected_texts" value="{{ line }}">{{ line }}
+                    </li>
+                {% endfor %}
+            </ul>
+            <button type="submit">送出選擇</button>
+        </form>
+    </div>
+</body>
+</html>
